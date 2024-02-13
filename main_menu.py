@@ -1,7 +1,7 @@
 import sys
 
 def main():
-    menu_item = 0
+    menu_item = 0 # Initializing to 0 results in executing the while loop at least once, mimicking a do-while loop.
 
     while menu_item < 1 or menu_item > 4:
         display_menu() # Displays all options available in the system
