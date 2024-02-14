@@ -2,7 +2,7 @@
 # 1) Create a Library class ✔
 # 2) Add the following functionalities:
 #       Listing ✔,
-#       Adding a book,
+#       Adding a book (In progress),
 #       Removing a book
 
 class Library:
