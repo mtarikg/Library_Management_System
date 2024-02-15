@@ -8,7 +8,7 @@ def main():
     while True:
         display_menu()  # Displays all options available in the system
         try:
-            menu_item = int(input("Please select an option below: "))
+            menu_item = int(input("Please select an option above: "))
             lib = Library("books.txt")
             # Directs to a subpage based on the user input
             menu_director(menu_item, lib)
@@ -28,7 +28,8 @@ def menu_director(menu_item: int, obj: Library):
     if menu_item == 1:
         obj.list_books()
     elif menu_item == 2:
-        print("Directing the user to Add a Book menu...")
+        book_inputs = add_book_inputs()
+        obj.add_book(book_inputs)
     elif menu_item == 3:
         print("Asking the user a title to remove a book...")
     elif menu_item == 4:
@@ -37,6 +38,16 @@ def menu_director(menu_item: int, obj: Library):
         sys.exit(0)
     else:
         print("Invalid input. Please try again.\n")
+
+
+def add_book_inputs():
+    inputs = []
+    title = input("Book Title: ")
+    author = input("Book Author: ")
+    release_year = input("Release Year: ")
+    page_number = input("Page number: ")
+    inputs.extend([title, author, release_year, page_number])
+    return inputs
 
 
 main()
