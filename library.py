@@ -3,7 +3,7 @@
 # 2) Add the following functionalities:
 #       Listing ✔,
 #       Adding a book ✔,
-#       Removing a book
+#       Removing a book (In progress)
 
 class Library:
     _book_counter = 0  # To assign IDs to books
