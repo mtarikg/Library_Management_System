@@ -6,8 +6,6 @@
 #       Removing a book (In progress)
 
 class Library:
-    _book_counter = 0  # To assign IDs to books
-
     def __init__(self, file_name):
         self.file = open(file_name, "a+")
 
@@ -16,22 +14,20 @@ class Library:
 
     """ 
     Potential bugs:
-        In case the user enters a title including a comma.
-        it'll break down the logic: splitting items by a comma.
-        Thus, a special combination of '-*-' is used to workaround such a case.
+        In case the user enters a title including a comma,
+        it'll break down the applied logic: splitting items by a comma.
     """
     def list_books(self):
         self.file.seek(0)
         books = self.file.read().splitlines()
         for book in books:
-            data = book.split("-*-")
-            title = data[1]
-            author = data[2]
+            data = book.split(",")
+            title = data[0]
+            author = data[1]
             print(f"Title: {title} - Author: {author}")
+        print("")
 
     # book_details consists of title, author, release year and number of pages, respectively.
     def add_book(self, book_details):
-        book_id = Library._book_counter
-        book_id += 1
-        self.file.write(f"{book_id}-*-{book_details[0]}-*-{book_details[1]}-*-{book_details[2]}-*-{book_details[3]}\n")
+        self.file.write(f"{book_details[0]},{book_details[1]},{book_details[2]},{book_details[3]}\n")
         print(f"Success - Added the book: {book_details[0]}\n")
