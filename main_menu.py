@@ -31,7 +31,8 @@ def menu_director(menu_item: int, obj: Library):
         book_inputs = add_book_inputs()
         obj.add_book(book_inputs)
     elif menu_item == 3:
-        print("Asking the user a title to remove a book...")
+        book_title = input("Title of the book to be removed: ")
+        obj.remove_book(book_title)
     elif menu_item == 4:
         print("Thanks for using our system!")
         print("Quitting...")
