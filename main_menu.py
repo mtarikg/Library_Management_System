@@ -13,7 +13,7 @@ def main():
             # Directs to a subpage based on the user input
             menu_director(menu_item, lib)
         except ValueError:
-            print("Please type only numbers.")
+            print("Please type only numbers.\n")
 
 
 def display_menu():
@@ -45,7 +45,13 @@ def add_book_inputs():
     title = input("Book Title: ")
     author = input("Book Author: ")
     release_year = input("Release Year: ")
+    while release_year.isnumeric() != True:
+        print("Release year can only be an integer.")
+        release_year = input("Release Year: ")
     page_number = input("Page number: ")
+    while page_number.isnumeric() != True:
+        print("Number of pages can only be an integer.")
+        page_number = input("Page number: ")
     inputs.extend([title, author, release_year, page_number])
     return inputs
 
