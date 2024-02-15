@@ -3,7 +3,7 @@
 # 2) Add the following functionalities:
 #       Listing ✔,
 #       Adding a book ✔,
-#       Removing a book (In progress)
+#       Removing a book ✔
 
 class Library:
     def __init__(self, file_name):
