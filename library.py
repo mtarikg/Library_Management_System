@@ -31,3 +31,17 @@ class Library:
     def add_book(self, book_details):
         self.file.write(f"{book_details[0]},{book_details[1]},{book_details[2]},{book_details[3]}\n")
         print(f"Success - Added the book: {book_details[0]}\n")
+
+    def remove_book(self, book_title):
+        self.file.seek(0)
+        books = self.file.read().splitlines()
+        for book in books:
+            title = book.split(",", 1)[0] # 1 specifies to split only the title column
+            if book_title == title:
+                books.remove(book)
+                print(f"Success - Removed the book: {book_title}\n")
+                break
+        self.file.truncate(0)
+        for book in books:
+            self.file.write(f"{book}\n")
+
