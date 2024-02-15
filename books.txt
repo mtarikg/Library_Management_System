@@ -1,3 +1,4 @@
-Mindset,Carol S. Dweck,2007,320
-Emotional Intelligence,Daniel Goleman,2005,352
-Feeling Good,David D. Burns,1999,736
+1-*-Mindset-*-Carol S. Dweck-*-2007-*-320
+2-*-Emotional Intelligence-*-Daniel Goleman-*-2005-*-352
+3-*-Feeling Good-*-David D. Burns-*-1999-*-736
+1-*-Sistem Caresiz Egitim Sizde-*-Erhan Erkut-*-2022-*-224
