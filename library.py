@@ -27,11 +27,26 @@ class Library:
             print(f"Title: {title} - Author: {author}")
         print("")
 
+    """
+    Complexity Analysis:
+        The running time of adding a book is Θ(1),
+        since it adds each book at the end of the list.
+    Possible Improvements:
+        1- Assigning an ID to each book added to the system
+        2- Checking whether there is already an existing record by a method, e.g., is_book_existing
+        3- If exists, a prompt to the user of whether they would want to update the book or not,
+            directing the user to another interface, e.g., edit_book.
+    """
     # book_details consists of title, author, release year and number of pages, respectively.
     def add_book(self, book_details):
         self.file.write(f"{book_details[0]},{book_details[1]},{book_details[2]},{book_details[3]}\n")
         print(f"Success - Added the book: {book_details[0]}\n")
 
+    """
+    Complexity Analysis:
+        The upper bound of removing a book is O(N),
+        whereas the lower bound is Ω(1).
+    """
     def remove_book(self, book_title):
         self.file.seek(0)
         books = self.file.read().splitlines()

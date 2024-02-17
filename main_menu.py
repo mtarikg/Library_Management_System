@@ -46,6 +46,8 @@ def add_book_inputs():
     title = input("Book Title: ")
     author = input("Book Author: ")
     release_year = input("Release Year: ")
+    # To not abort the process abruptly, going back to the main menu,
+    # it keeps asking the user to enter a correct type of value.
     while release_year.isnumeric() != True:
         print("Release year can only be an integer.")
         release_year = input("Release Year: ")
